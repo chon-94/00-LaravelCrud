@@ -113,20 +113,18 @@ Estare usando Linux
 
       php artisan migrate      
 
- En consola debemos ejecutar esto
+ Creamos la tabla
 
       php artisan make:migration create_tasks_table
 
- Despues deberiamos ir a 
-   
-      spw/database/migrations/2023_06_27_201953_create_tasks_table.php
 
- Agregamos esto
+ Luego de eso en spw/database/migrations/2023_06_28_173255_create_tasks_table.php
+ añadimos esto
 
-      $table->string('title');
+      $table->string('title', 255);
       $table->text('description');
-      $table->dateTime('due_date')->nullable();
-      $table->enum('status',['pendiente','En Progreso','Completado'])->nullable();
+      $table->dateTime('due_date');
+      $table->enum('status', ['Pendiente', 'En progreso', 'Completada']);
 
  Migra
       
