@@ -130,8 +130,15 @@ Estare usando Linux
       
       php artisan migrate
 
+ mysql
+
+      show columns from tasks;
+puedes hacer esto para ver el contenido de tasks osea sus... row? bueno ya lo olvide      
+
+
  Crear controlador y modelo
 
-      php artisan make:controller TaskController --resource --model=Tasks
+      php artisan make:controller TaskController --resource --model=Task
+ tener cuidadoy recordadr como y conque nombre lo creas y haces todo...     
 
 
