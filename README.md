@@ -90,7 +90,6 @@ Estare usando Linux
 
 ## Base de Datos 
 
-
  para arrancar mysql
 
       mysql -u root -p
@@ -139,6 +138,25 @@ puedes hacer esto para ver el contenido de tasks osea sus... row? bueno ya lo ol
  Crear controlador y modelo
 
       php artisan make:controller TaskController --resource --model=Task
- tener cuidadoy recordadr como y conque nombre lo creas y haces todo...     
+ tener cuidadoy recordadr como y conque nombre lo creas y haces todo...    
 
 
+## Vistas
+
+ despues de ejecutar aquel comando se crearan 2 archivos
+ 
+ spw/app/Http/Controllers/TaskController.php
+
+     return view('tasks.index');
+
+     return view('tasks.create');
+
+
+ spw/app/Models/Task.php
+
+ y en el archivo
+
+ spw/routes/web.php
+
+     Route ::resource('tasks', TaskController::class);
+     
