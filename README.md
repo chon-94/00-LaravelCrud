@@ -1,11 +1,6 @@
 # 00-LaravelCrud
  crud de laravel
 
-
-
-# 0-LaravelCrud
- crud de laravel
- 
  Un CRUD es
  C -> Create
  R -> Read
@@ -92,3 +87,53 @@ Estare usando Linux
  Despues de esto puedes Correrla 
 
     npm run dev
+
+## Base de Datos 
+
+
+ para arrancar mysql
+
+      mysql -u root -p
+
+ Crear base de datos
+
+      CREATE DATABASE nombre_base_datos
+
+ Para ver todos los usuarios con sus permisos
+
+      SELECT User, Host, Grant_priv FROM mysql.user;
+
+ Para ver los usuarios y permisos
+
+      CREATE USER 'nombre_usuario'@'localhost' IDENTIFIED BY 'contraseña';
+      GRANT ALL PRIVILEGES ON nombre_basedatos.* TO 'nombre_usuario'@'localhost';
+      FLUSH PRIVILEGES;
+
+ Despues de esto debemos de hacer las migraciones
+
+      php artisan migrate      
+
+ En consola debemos ejecutar esto
+
+      php artisan make:migration create_tasks_table
+
+ Despues deberiamos ir a 
+   
+      spw/database/migrations/2023_06_27_201953_create_tasks_table.php
+
+ Agregamos esto
+
+      $table->string('title');
+      $table->text('description');
+      $table->dateTime('due_date')->nullable();
+      $table->enum('status',['pendiente','En Progreso','Completado'])->nullable();
+
+ Migra
+      
+      php artisan migrate
+
+ Crear controlador y modelo
+
+      php artisan make:controller TaskController --resource --model=Tasks
+
+
