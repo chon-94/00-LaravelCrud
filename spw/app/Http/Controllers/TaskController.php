@@ -19,7 +19,9 @@ class TaskController extends Controller
 
     public function store(Request $request)
     {
-        dd($request ->all());
+        // dd($request ->all());
+        Task::create($request->all());
+        return redirect()->route('tasks.index');
     }
 
     public function show(Task $task)
