@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Task;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
@@ -17,11 +18,16 @@ class TaskController extends Controller
         return view('tasks.create');
     }
 
-    public function store(Request $request)
+    public function store(Request $request):RedirectResponse
     {
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+
+        ]);
         // dd($request ->all());
         Task::create($request->all());
-        return redirect()->route('tasks.index');
+        return redirect()->route('tasks.index')->with('success','Nueva Creacion craeada');
     }
 
     public function show(Task $task)
