@@ -5,16 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\Task;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class TaskController extends Controller
 {
-    public function index()
+    public function index():View
     {
         $tasks = Task::latest()->paginate(3);
         return view('tasks.index',['tasks'=> $tasks]);
     }
 
-    public function create()
+    public function create():View
     {
         return view('tasks.create');
     }
