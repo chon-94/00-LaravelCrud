@@ -10,8 +10,7 @@ class TaskController extends Controller
 {
     public function index()
     {
-        $tasks = Task::latest()->get();
-
+        $tasks = Task::latest()->paginate(3);
         return view('tasks.index',['tasks'=> $tasks]);
     }
 
