@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('layouts.crud')
 
 @section('content')
 <div class="row">

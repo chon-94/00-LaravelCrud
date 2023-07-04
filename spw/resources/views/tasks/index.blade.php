@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('layouts.crud')
 <title>Tasks</title>
 
 @section('content')
