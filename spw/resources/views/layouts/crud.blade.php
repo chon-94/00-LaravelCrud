@@ -18,7 +18,7 @@
 
     <!-- NOMBRE Y LOGO -->
     <div class="flex w-full md:w-1/2 justify-center md:justify-start font-extrabold">
-      <a href="#" class="text-black">
+      <a href="{{ route('web.welcome') }}" class="text-black">
         FEMA Ingenieros
       </a>
     </div>
@@ -30,19 +30,19 @@
 
         <!--Servicios-->
         <li class="mr-5"> 
-          <a href="#" class="px-4 text-black">Servicios</a>
+          <a href="{{ route('web.servicio') }}" class="px-4 text-black">Servicios</a>
         </li>
         <!--Servicios-->
 
         <!--Contacto-->
         <li class="mr-5"> 
-          <a href="#" class="px-4 text-black">Contacto</a>
+          <a href="{{ route('web.contacto') }}" class="px-4 text-black">Contacto</a>
         </li>
         <!--Contacto-->
 
         <!--Acerca de-->
         <li class="mr-5">
-          <a href="#" class="px-4 text-black">Acerca de</a>
+          <a href="{{ route('web.acercade') }}" class="px-4 text-black">Acerca de</a>
         </li>
         <!--Acerca de-->
 
