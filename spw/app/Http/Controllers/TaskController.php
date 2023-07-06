@@ -26,10 +26,21 @@ class TaskController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
+            'archivo' => 'nullable|max:2048',
 
         ]);
+        
+        $taskData = $request->except('archivo');
         // dd($request ->all());
-        Task::create($request->all());
+
+        if ($request->hasFile('archivo')) {
+            $archivo = $request->file('archivo');
+            $ruta = $archivo->store('archivos', 'public');
+            $taskData['archivo'] = $ruta;
+            $taskData['archivo_nombre'] = $archivo->getClientOriginalName(); // Guardar el nombre del archivo seleccionado
+        }
+
+        Task::create($taskData);
         return redirect()->route('tasks.index')->with('success','Nueva Creacion craeada');
     }
 

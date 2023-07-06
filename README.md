@@ -102,7 +102,7 @@ Estare usando Linux
 
       SELECT User, Host, Grant_priv FROM mysql.user;
 
- Para ver los usuarios y permisos
+ Para crear usuarios y permisos
 
       CREATE USER 'nombre_usuario'@'localhost' IDENTIFIED BY 'contraseña';
       GRANT ALL PRIVILEGES ON nombre_basedatos.* TO 'nombre_usuario'@'localhost';
